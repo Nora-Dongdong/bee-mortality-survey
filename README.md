@@ -15,7 +15,7 @@ Installation
 How to run:
 
 Directory Tree:
-'''plaintext
+```plaintext
 /bee-mortality-analysis
 │
 ├── data/               # 建议在 .gitignore 里忽略此文件夹，只在本地保存
@@ -41,4 +41,4 @@ Directory Tree:
 ├── README.md           # 项目总览
 ├── requirements.txt    # 依赖库清单
 └── .gitignore          # 忽略 Data/ 和 __pycache__/
-'''
+```
