@@ -216,3 +216,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# --- My Project Specifics ---
+Data/
+Outputs/
+*.pkl
+Trial_*.py
