@@ -1,6 +1,15 @@
 # bee-mortality-survey
 Data analysis project I did for Stichting Bee Foundation. Analyzed survey from beekeepers and identified high-risk beekeeping practices.
 
+Custom utility functions for data consistency and cleaning are maintained in src/core_tools.py to ensure reproducibility across different survey years.
+
+Data Source: 
+...All the information regarding name, address, contact information, and location has been taken away.
+
+Methodology: ..+GEE (Generalized Estimating Equations) 
+
+Future plans: This repository is designed to evolve into a 4-year longitudinal analysis of bee mortality (2022-2026).
+
 Installation
 
 How to run:
