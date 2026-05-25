@@ -18,27 +18,27 @@ Directory Tree:
 ```plaintext
 /bee-mortality-analysis
 │
-├── data/               # 建议在 .gitignore 里忽略此文件夹，只在本地保存
-│   ├── raw/            # 原始数据，永远不要修改
+├── data/               
+│   ├── raw/             # raw data, won't be public access
 │   │   ├── 2022/
 │   │   ├── 2023/
 │   │   ├── 2024/
 │   │   ├── 2025/
-│   │   └── 2026/       # 你现在的数据放在这里
-│   └── processed/      # 清洗后、用于建模的数据
+│   │   └── 2026/       
+│   └── processed/       # data after cleansing, dropping any personal information
 │
-├── notebooks/          # 所有的 Jupyter Notebook
-│   ├── annual_eda/     # 每年的探索性分析
-│   └── cross_year/     # 跨年份的一致化分析（你未来的重心）
+├── notebooks/           # Jupyter Notebook
+│   ├── annual_eda/      # analysis for single year dataset
+│   └── cross_year/      # longitudinal analysis
 │
-├── src/                # 存放通用的 Python 脚本 (如 core_tools.py)
-│   ├── cleaning.py     # 专门负责清洗和一致化的函数
-│   └── visualization.py
+├── src/                 # (eg.core_tools.py)
+│   ├── cleaning.py      # functions for data cleaning and consistency
+│   └── visualization.py # functions for data visualization
 │
-├── outputs/            # 存放生成的图表和报告
+├── outputs/             # graphs and models
 │   └── figures/
 │
-├── README.md           # 项目总览
-├── requirements.txt    # 依赖库清单
-└── .gitignore          # 忽略 Data/ 和 __pycache__/
+├── README.md           
+├── requirements.txt    
+└── .gitignore          
 ```
