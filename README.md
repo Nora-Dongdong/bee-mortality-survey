@@ -4,7 +4,7 @@ Data analysis project I did for Stichting Bee Foundation. Analyzed survey from b
 Custom utility functions for data consistency and cleaning are maintained in src/core_tools.py to ensure reproducibility across different survey years.
 
 Data Source: 
-...All the information regarding name, address, contact information, and location has been taken away.
+Raw data is not open access. In the processed datasets, all information regarding name, address, contact information, and location has been dropped.
 
 Methodology: ..+GEE (Generalized Estimating Equations) 
 
