@@ -10,10 +10,6 @@ Methodology: ..+GEE (Generalized Estimating Equations)
 
 Future plans: This repository is designed to evolve into a 4-year longitudinal analysis of bee mortality (2022-2026).
 
-Installation
-
-How to run:
-
 Directory Tree:
 ```plaintext
 /bee-mortality-analysis
