@@ -6,8 +6,6 @@ Custom utility functions for data consistency and cleaning are maintained in src
 Data Source: 
 Raw data is not open access. In the processed datasets, all information regarding name, address, contact information, and location has been dropped.
 
-Methodology: ..+GEE (Generalized Estimating Equations) 
-
 Future plans: This repository is designed to evolve into a 4-year longitudinal analysis of bee mortality (2022-2026).
 
 Directory Tree:
@@ -23,7 +21,7 @@ Directory Tree:
 │   │   └── 2026/       
 │   └── processed/       # data after cleansing, dropping any personal information
 │
-├── notebooks/           # Jupyter Notebook
+├── notebooks/           
 │   ├── annual_eda/      # analysis for single year dataset
 │   └── cross_year/      # longitudinal analysis
 │
