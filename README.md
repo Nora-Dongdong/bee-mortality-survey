@@ -13,7 +13,7 @@ Directory Tree:
 /bee-mortality-analysis
 │
 ├── data/               
-│   ├── raw/             # raw data, won't be public access
+│   ├── raw/             # raw data, no public access as it contains GPS data
 │   │   ├── 2022/
 │   │   ├── 2023/
 │   │   ├── 2024/
@@ -25,7 +25,7 @@ Directory Tree:
 │   ├── annual_eda/      # analysis for single year dataset
 │   └── cross_year/      # longitudinal analysis
 │
-├── src/                 # (eg.core_tools.py)
+├── src/                 
 │   ├── cleaning.py      # functions for data cleaning and consistency
 │   └── visualization.py # functions for data visualization
 │
