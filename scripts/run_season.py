@@ -81,6 +81,8 @@ def main(argv=None):
     ors = models.summary_table(results)
     save(ors, "03_gee_odds_ratios")
     save(models.fit_info(results, s), "03_gee_fit_info")
+    save(models.summary_table(models.fit_all_apiary_level(df, s)),
+         "03_gee_odds_ratios_apiary_level_sensitivity")
     for name, r in results.items():
         figures.odds_ratio_forest(ors.loc[ors["model"].eq(name)], s,
                                   f"03_forest_{name.replace(' ', '').lower()}", f"{name}: odds ratios")

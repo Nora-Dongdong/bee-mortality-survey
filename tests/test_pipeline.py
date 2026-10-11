@@ -79,3 +79,15 @@ def test_load_keeps_only_coded_columns(tmp_path):
     raw.to_csv(tmp_path / "s.csv", index=False)
     cols = cleaning.load(S, tmp_path / "s.csv").columns
     assert "winter_food_origin" not in cols and "andere_ziektes" not in cols
+
+
+def test_apiary_level_matches_old_notebook(df):
+    """The old notebook passed (deaths, survivors) to sm.GEE; the sensitivity
+    model must reproduce it."""
+    ap = models.model_sample(df, S)
+    X = sm.add_constant(pd.get_dummies(ap.winter_food, prefix="f").drop(columns="f_2").astype(float))
+    old = sm.GEE(pd.DataFrame({"d": ap.deaths, "s": ap["2026_winter_uit"]}), X,
+                 groups=ap.id_beekeeper, family=sm.families.Binomial()).fit()
+    new = sm.GEE.from_formula("mortality ~ C(winter_food, Treatment(2))", groups="id_beekeeper",
+                              data=ap, family=sm.families.Binomial()).fit()
+    np.testing.assert_allclose(old.params.values, new.params.values, rtol=1e-6)

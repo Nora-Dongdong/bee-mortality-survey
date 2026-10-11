@@ -71,6 +71,26 @@ def fit_all(df: pd.DataFrame, s: Season) -> dict:
     return {name: fit(colonies, f, s) for name, f in formulas(s).items()}
 
 
+def fit_all_apiary_level(df: pd.DataFrame, s: Season) -> dict:
+    """Sensitivity analysis: every apiary counts once, whatever its size.
+
+    Outcome is the apiary's loss proportion, unweighted. This is what the old
+    notebook 03 estimated (statsmodels turned its (deaths, survivors) endog into
+    this proportion), so it reproduces the odds ratios in the July 2026 report."""
+    apiaries = model_sample(df, s)
+    out = {}
+    for name, f in formulas(s).items():
+        model = sm.GEE.from_formula(
+            f.replace("died ~", "mortality ~"),
+            groups=s.beekeeper_id,
+            data=apiaries,
+            family=sm.families.Binomial(),
+            cov_struct=sm.cov_struct.Independence(),
+        )
+        out[name] = model.fit()
+    return out
+
+
 # ------------------------------------------------------------------
 # Readable output
 # ------------------------------------------------------------------
