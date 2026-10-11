@@ -1,0 +1,299 @@
+<title>Dutch Bee Winter Losses 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Public+Sans:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: a single reading column, one finding per section: claim, chart, decision. Honeycomb motif for the headline only. */
+:root {
+  --paper: #f7f7f3;
+  --panel: #ecece4;
+  --ink: #1f2430;
+  --ink-soft: #5b6170;
+  --rule: #d6d6cb;
+  --wax: #c27a14;          /* accent: the bars the claim is about */
+  --wax-soft: #f0d9b0;
+  --grey: #b9bbb2;          /* everything else */
+  --good: #3f7a52;
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Public Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-data: "JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #16181d; --panel: #20232a; --ink: #ecebe4; --ink-soft: #a3a7b2; --rule: #343842;
+    --wax: #e9a23b; --wax-soft: #4a3816; --grey: #555a64; --good: #7cbf8f; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #16181d; --panel: #20232a; --ink: #ecebe4; --ink-soft: #a3a7b2; --rule: #343842;
+  --wax: #e9a23b; --wax-soft: #4a3816; --grey: #555a64; --good: #7cbf8f; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: 17px; line-height: 1.6; }
+.wrap { max-width: 760px; margin: 0 auto; padding-inline: 20px; padding-block: 48px 72px; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; line-height: 1.15; margin: 0; }
+h1 { font-size: clamp(2rem, 5.5vw, 3.1rem); font-weight: 700; letter-spacing: -0.01em; }
+h2 { font-size: clamp(1.4rem, 3.4vw, 1.9rem); font-weight: 700; }
+h3 { font-size: 1.05rem; font-weight: 700; }
+p { margin: 0; max-width: 65ch; }
+.eyebrow { font-family: var(--font-data); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); }
+.num { font-family: var(--font-data); font-variant-numeric: tabular-nums; }
+header { display: grid; gap: 16px; }
+.lede { font-size: 1.2rem; color: var(--ink); }
+.meta { font-size: 0.85rem; color: var(--ink-soft); }
+
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; align-items: center; margin-block: 36px 8px; }
+.hero svg { width: 100%; height: auto; display: block; }
+.hero .big { font-family: var(--font-display); font-size: clamp(3.4rem, 10vw, 5.2rem); font-weight: 700; line-height: 1; color: var(--wax); }
+.hero dl { display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; margin: 16px 0 0; font-size: 0.95rem; }
+.hero dt { font-family: var(--font-data); font-variant-numeric: tabular-nums; text-align: right; }
+.hero dd { margin: 0; color: var(--ink-soft); }
+@media (max-width: 560px) { .hero { grid-template-columns: 1fr; } }
+
+.decisions { background: var(--panel); border-radius: 6px; padding: 24px; margin-block: 40px; display: grid; gap: 16px; }
+.decisions ol { margin: 0; padding-left: 1.3em; display: grid; gap: 10px; }
+.decisions li::marker { font-family: var(--font-data); color: var(--wax); }
+.decisions a { color: inherit; }
+
+section.finding { border-top: 1px solid var(--rule); padding-block: 44px 8px; display: grid; gap: 18px; }
+.chart { width: 100%; overflow-x: auto; }
+.chart svg { display: block; width: 100%; min-width: 520px; height: auto; }
+.chart svg text { fill: var(--ink); font-family: var(--font-body); }
+.chart svg .soft { fill: var(--ink-soft); }
+.chart svg .val { font-family: var(--font-data); font-size: 13px; }
+.chart figcaption { font-size: 0.8rem; color: var(--ink-soft); margin-top: 6px; }
+.so { border-left: 3px solid var(--wax); padding: 2px 0 2px 16px; }
+.so strong { font-family: var(--font-display); }
+.caveat { font-size: 0.92rem; color: var(--ink-soft); }
+
+.pair { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 16px; }
+.pair > div { background: var(--panel); border-radius: 6px; padding: 18px; display: grid; gap: 8px; align-content: start; }
+.pair .stat { font-family: var(--font-display); font-size: 2rem; font-weight: 700; line-height: 1; }
+@media (max-width: 560px) { .pair { grid-template-columns: 1fr; } }
+
+ul.plain { margin: 0; padding-left: 1.2em; display: grid; gap: 8px; max-width: 65ch; }
+footer { border-top: 1px solid var(--rule); margin-top: 48px; padding-top: 20px; font-size: 0.82rem; color: var(--ink-soft); display: grid; gap: 8px; }
+a { color: var(--ink); }
+a:focus-visible { outline: 2px solid var(--wax); outline-offset: 2px; }
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">Beekeeper survey · Winter 2025–2026 · The Netherlands</span>
+    <h1>One in five Dutch bee colonies died this winter. Most of the gap is in how they were treated and fed.</h1>
+    <p class="lede">Losses were the same as last year and twice the normal level. The beekeepers who lost the fewest colonies treated varroa across the whole season and did not winter their bees on honey alone.</p>
+    <p class="meta">Mingtong Zhang, University of Amsterdam, for the Bee Foundation and the Nederlandse Bijenhouders Vereniging. Survey of 832 apiaries, 695 beekeepers, 4,846 colonies, collected 20 Jan – 7 Apr 2026.</p>
+  </header>
+
+  <div class="hero" role="group" aria-label="Winter loss at a glance">
+    <svg id="comb" viewBox="0 0 296 240" role="img" aria-label="100 hive cells, 22 of them filled: about 22 of every 100 colonies died"></svg>
+    <div>
+      <div class="big num">21.7%</div>
+      <p>of colonies died over winter: 1,051 of 4,846.</p>
+      <dl>
+        <dt>21.6%</dt><dd>last winter, same survey</dd>
+        <dt>10%</dt><dd>loss level beekeepers consider normal</dd>
+        <dt>52%</dt><dd>of apiaries lost at least one colony</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="decisions">
+    <span class="eyebrow">What the data supports</span>
+    <h2>Four decisions</h2>
+    <ol>
+      <li><a href="#varroa">Push full-season varroa treatment.</a> Treating in winter only or summer only went with losses as high as not treating at all.</li>
+      <li><a href="#feed">Advise against wintering on honey alone.</a> Honey-only colonies lost twice as many, unless they also had a full varroa treatment.</li>
+      <li><a href="#monitor">Make mite counting routine.</a> Beekeepers who saw no mites lost the most colonies.</li>
+      <li><a href="#next">Fix the gaps in next year's survey</a>: under-sampled provinces, missing locations, and a sharper pesticide measure.</li>
+    </ol>
+  </div>
+
+  <section class="finding" id="varroa">
+    <span class="eyebrow">Finding 1 · Varroa treatment</span>
+    <h2>Half a treatment did no better than none</h2>
+    <p>Colonies that got the full three-step treatment, or a complete alternative treatment, lost 13–19%. Colonies treated in only one season lost 28–32%, more than colonies that were not treated at all.</p>
+    <figure class="chart" style="margin:0">
+      <svg id="c-varroa" viewBox="0 0 720 280" role="img" aria-label="Winter loss by varroa treatment"></svg>
+      <figcaption>Share of colonies lost, by varroa treatment. Dashed line: all apiaries, 21.7%. Colony counts on the right.</figcaption>
+    </figure>
+    <p class="so"><strong>So:</strong> the message to beekeepers is "treat in summer and in winter". Treating once is not a safe middle ground.</p>
+  </section>
+
+  <section class="finding" id="feed">
+    <span class="eyebrow">Finding 2 · Winter feed</span>
+    <h2>Honey-only colonies lost twice as many, unless they were fully treated</h2>
+    <p>Colonies wintered only on their own honey lost 41%, against about 20% for colonies that also got sugar water. The grid below splits this by treatment. In the honey column, the one low number is the fully treated group.</p>
+    <figure class="chart" style="margin:0">
+      <svg id="c-grid" viewBox="0 0 720 400" role="img" aria-label="Winter loss by winter feed and varroa treatment"></svg>
+      <figcaption>Share of colonies lost, by winter feed and varroa treatment. Darker means higher loss. Cells with a dotted outline cover fewer than 20 apiaries; read them as indications only.</figcaption>
+    </figure>
+    <p class="so"><strong>So:</strong> beekeepers who want to winter on honey can, if they treat fully. Those who don't treat fully should add sugar water.</p>
+    <p class="caveat">After accounting for treatment and beekeeping method together, honey-only feeding still carried 60–75% higher odds of loss. One cell needs care: sugar-and-honey colonies with no treatment lost only 16%. That group may include beekeepers breeding mite-resistant bees, which the survey did not ask about.</p>
+  </section>
+
+  <section class="finding" id="method">
+    <span class="eyebrow">Finding 3 · Beekeeping method</span>
+    <h2>Natural beekeeping looks risky only because of the feeding and treatment that come with it</h2>
+    <p>Natural beekeepers lost 27.6% and controlled-method beekeepers (Aalster, Renson) 13.6%. But natural beekeepers more often winter on honey and skip varroa treatment. Once those choices are accounted for, natural and controlled methods carry similar risk. Regular (regulier) beekeeping, the most common method, still carries about 50% higher odds of loss than controlled methods.</p>
+    <p class="so"><strong>So:</strong> advice can focus on treatment and feed for every group, without arguing about the method itself.</p>
+  </section>
+
+  <section class="finding" id="monitor">
+    <span class="eyebrow">Finding 4 · Monitoring</span>
+    <h2>Beekeepers who saw no mites lost the most colonies</h2>
+    <p>Apiaries reporting no varroa lost 31%; those reporting some lost about 20%. Mites are almost always present, so "none seen" most likely means "not looked for". Beekeepers who reported no Asian hornets also lost more (26%), likely for the same reason.</p>
+    <figure class="chart" style="margin:0">
+      <svg id="c-seen" viewBox="0 0 720 280" role="img" aria-label="Winter loss by varroa seen"></svg>
+      <figcaption>Share of colonies lost, by how much varroa the beekeeper reported seeing. Dashed line: all apiaries, 21.7%.</figcaption>
+    </figure>
+    <p class="so"><strong>So:</strong> promote regular mite counts (sticky board or sugar roll). They turn an invisible problem into a treatment decision.</p>
+  </section>
+
+  <section class="finding" id="land">
+    <span class="eyebrow">Finding 5 · The land around the apiary</span>
+    <h2>More kinds of crops nearby went with slightly lower losses; the pesticide estimate showed no harm</h2>
+    <p>For the 427 apiaries with a location, we measured the land within 500 m and 1 km.</p>
+    <div class="pair">
+      <div>
+        <span class="eyebrow">Crop diversity</span>
+        <span class="stat num">−8%</span>
+        <p>lower odds of loss for each extra crop type within 1 km, after accounting for treatment, feed and method.</p>
+      </div>
+      <div>
+        <span class="eyebrow">Pesticide estimate</span>
+        <span class="stat num">No link</span>
+        <p>Higher estimated pesticide use did not go with higher losses. The estimate counts all pesticides by weight, so it cannot single out the ones harmful to bees.</p>
+      </div>
+    </div>
+    <p class="so"><strong>So:</strong> do not read this as "pesticides are safe". It says the current measure is too coarse. A bee-specific measure is the next step.</p>
+  </section>
+
+  <section class="finding" id="next">
+    <span class="eyebrow">Before next winter</span>
+    <h2>What would make next year's answer stronger</h2>
+    <ul class="plain">
+      <li><strong>Recruit where the survey is thin.</strong> Zeeland had 7 apiaries, Friesland 11, Groningen 18. Province results also differ from the WUR survey, so province-level rankings are not reliable yet.</li>
+      <li><strong>Ask for a location in every response.</strong> Only 427 of 832 apiaries gave one, which halves the sample for the land analysis.</li>
+      <li><strong>Ask about mite-resistant breeding and mite counts.</strong> Both would explain the odd results in findings 2 and 4.</li>
+      <li><strong>Narrow the pesticide measure</strong> to compounds known to harm bees, and follow the same apiaries across years.</li>
+    </ul>
+  </section>
+
+  <section class="finding">
+    <span class="eyebrow">How sure we are</span>
+    <h2>Strong enough to act on, not proof of cause</h2>
+    <ul class="plain">
+      <li>Beekeepers volunteered and reported their own numbers. The survey covers about 5% of the estimated 80,000–100,000 Dutch colonies.</li>
+      <li>These are associations. Beekeepers who treat fully may also do other things well.</li>
+      <li>The key comparisons were checked with a model that treats each beekeeper's apiaries as related (GEE), so a few large beekeepers cannot drive the results.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>Sources: "Analysis of Bee Mortality during Winter 2025–2026" and "Analysis of the Effects of Land Toxicity and Crop Diversity on Winter Mortality" (M. Zhang, L. van Kampenhout, July 2026); "Bee mortality project: more results" (L. van Kampenhout, 16 July 2026); survey analysis notebooks in the bee-mortality-survey repository. 2024–2025 comparison from the same survey's previous round.</p>
+    <p>The grid in finding 2 uses the colony-weighted rates from the analysis notebook; the written report quotes 45.4% for honey-only with no treatment, where the grid shows 45.1%.</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var NS = 'http://www.w3.org/2000/svg';
+  function el(tag, attrs, parent, text) {
+    var n = document.createElementNS(NS, tag);
+    for (var k in attrs) n.setAttribute(k, attrs[k]);
+    if (text != null) n.textContent = text;
+    if (parent) parent.appendChild(n);
+    return n;
+  }
+  var AVG = 21.7;
+
+  // Honeycomb: 100 cells, 22 filled (21.7% rounded)
+  (function () {
+    var svg = document.getElementById('comb');
+    var r = 15, w = Math.sqrt(3) * r, h = 1.5 * r, dead = 22, i = 0;
+    for (var row = 0; row < 10; row++) {
+      for (var col = 0; col < 10; col++) {
+        var cx = 22 + col * w + (row % 2 ? w / 2 : 0), cy = 18 + row * h;
+        var pts = [];
+        for (var a = 0; a < 6; a++) {
+          var ang = Math.PI / 180 * (60 * a - 30);
+          pts.push((cx + (r - 1.5) * Math.cos(ang)).toFixed(1) + ',' + (cy + (r - 1.5) * Math.sin(ang)).toFixed(1));
+        }
+        el('polygon', { points: pts.join(' '), fill: i < dead ? 'var(--wax)' : 'var(--panel)', stroke: i < dead ? 'var(--wax)' : 'var(--grey)', 'stroke-width': 1 }, svg);
+        i++;
+      }
+    }
+  })();
+
+  // Horizontal bar chart
+  function bars(id, rows, opts) {
+    var svg = document.getElementById(id);
+    var left = 200, right = 610, y0 = 24, bh = 30, gap = 16, max = opts.max;
+    var x = function (v) { return left + v / max * (right - left); };
+    var H = y0 + rows.length * (bh + gap) + 34;
+    svg.setAttribute('viewBox', '0 0 720 ' + H);
+    rows.forEach(function (r, i) {
+      var y = y0 + i * (bh + gap), v = r.lost / r.colonies * 100;
+      el('text', { x: left - 12, y: y + bh / 2 + 5, 'text-anchor': 'end', 'font-size': 15 }, svg, r.label);
+      el('rect', { x: left, y: y, width: Math.max(1, x(v) - left), height: bh, rx: 2, fill: r.hi ? 'var(--wax)' : 'var(--grey)' }, svg);
+      var lx = (v < AVG && v > AVG - 6) ? x(AVG) + 8 : x(v) + 8;
+      el('text', { x: lx, y: y + bh / 2 + 5, 'class': 'val', 'font-weight': 600 }, svg, v.toFixed(1) + '%');
+      el('text', { x: 712, y: y + bh / 2 + 5, 'text-anchor': 'end', 'class': 'soft', 'font-size': 12 }, svg, r.colonies.toLocaleString('en-US') + ' colonies');
+    });
+    var yEnd = y0 + rows.length * (bh + gap) - gap;
+    el('line', { x1: x(AVG), x2: x(AVG), y1: y0 - 10, y2: yEnd + 6, stroke: 'var(--ink-soft)', 'stroke-dasharray': '4 4' }, svg);
+    el('text', { x: x(AVG), y: yEnd + 26, 'text-anchor': 'middle', 'class': 'soft', 'font-size': 12 }, svg, 'All apiaries ' + AVG + '%');
+  }
+
+  bars('c-varroa', [
+    { label: 'Alternative, complete', colonies: 618, lost: 83 },
+    { label: 'Full 3-step', colonies: 2407, lost: 461 },
+    { label: 'No treatment', colonies: 767, lost: 190 },
+    { label: 'Summer only', colonies: 623, lost: 177, hi: true },
+    { label: 'Winter only', colonies: 432, lost: 140, hi: true }
+  ], { max: 40 });
+
+  bars('c-seen', [
+    { label: 'Moderate', colonies: 2172, lost: 426 },
+    { label: 'A few', colonies: 1626, lost: 352 },
+    { label: 'Many', colonies: 473, lost: 106 },
+    { label: "Don't know", colonies: 275, lost: 73 },
+    { label: 'None seen', colonies: 301, lost: 94, hi: true }
+  ], { max: 40 });
+
+  // Feed x treatment grid
+  (function () {
+    var svg = document.getElementById('c-grid');
+    var feeds = ['Sugar only', 'Sugar + honey', 'Honey only'];
+    var treat = ['Full 3-step', 'Alternative, complete', 'Winter only', 'Summer only', 'No treatment'];
+    // [loss %, colonies, apiaries]
+    var d = [
+      [[19.4, 702, 104], [19.2, 1601, 277], [16.3, 104, 21]],
+      [[16.8, 131, 14], [9.3, 441, 55], [43.5, 46, 10]],
+      [[22.0, 132, 26], [30.7, 244, 54], [61.5, 52, 8]],
+      [[23.3, 103, 20], [27.5, 472, 88], [48.9, 45, 10]],
+      [[30.9, 55, 14], [16.3, 516, 65], [45.1, 195, 63]]
+    ];
+    var left = 190, top0 = 40, cw = 170, ch = 64;
+    feeds.forEach(function (f, j) {
+      el('text', { x: left + j * cw + cw / 2, y: 24, 'text-anchor': 'middle', 'font-size': 14, 'font-weight': 600 }, svg, f);
+    });
+    treat.forEach(function (t, i) {
+      el('text', { x: left - 12, y: top0 + i * ch + ch / 2 + 5, 'text-anchor': 'end', 'font-size': 14 }, svg, t);
+      d[i].forEach(function (c, j) {
+        var x = left + j * cw, y = top0 + i * ch, small = c[2] < 20;
+        var key = (i === 0 && j === 2);
+        var op = Math.min(1, Math.max(0.08, (c[0] - 5) / 55));
+        el('rect', { x: x + 3, y: y + 3, width: cw - 6, height: ch - 6, rx: 3, fill: 'var(--panel)' }, svg);
+        el('rect', { x: x + 3, y: y + 3, width: cw - 6, height: ch - 6, rx: 3, fill: 'var(--wax)', 'fill-opacity': op.toFixed(2),
+          stroke: key ? 'var(--good)' : (small ? 'var(--ink-soft)' : 'none'), 'stroke-width': key ? 3 : 1.2, 'stroke-dasharray': (small && !key) ? '3 3' : '0' }, svg);
+        var dark = op > 0.55;
+        el('text', { x: x + cw / 2, y: y + ch / 2 + 1, 'text-anchor': 'middle', 'class': 'val', 'font-size': 17, 'font-weight': 600, style: dark ? 'fill: var(--paper)' : '' }, svg, c[0].toFixed(1) + '%');
+        el('text', { x: x + cw / 2, y: y + ch / 2 + 18, 'text-anchor': 'middle', 'font-size': 11, 'class': dark ? '' : 'soft', style: dark ? 'fill: var(--paper)' : '' }, svg, c[1].toLocaleString('en-US') + ' colonies');
+      });
+    });
+    el('text', { x: left + 3 * cw - 3, y: top0 + 5 * ch + 22, 'text-anchor': 'end', 'font-size': 12, style: 'fill: var(--good)', 'font-weight': 600 }, svg, 'Fully treated honey-only colonies: 16.3%');
+  })();
+})();
+</script>
