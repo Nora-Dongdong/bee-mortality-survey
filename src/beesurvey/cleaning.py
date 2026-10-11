@@ -6,6 +6,7 @@ so the report can state exactly why each apiary was excluded.
 """
 import re
 
+import numpy as np
 import pandas as pd
 
 from .config import Season
@@ -31,15 +32,44 @@ def assert_no_pii(df: pd.DataFrame) -> None:
         raise ValueError(f"Personal or free-text columns found, drop them first: {hits}")
 
 
+# Coded survey answers that are safe to keep. Everything else in the export
+# (open-text "_origin" answers, disease free text, stray columns) is dropped on load.
+EXTRA_COLUMNS = [
+    "province", "bijenstanden_count",
+    "honingdracht_voorjaar", "honingdracht_zomer", "honingdracht_nazomer",
+    "stuifmeel_voorjaar", "stuifmeel_zomer", "stuifmeel_nazomer",
+    "outside_nl",
+]
+
+
+def analysis_columns(season: Season) -> list:
+    return [season.apiary_id, season.beekeeper_id, season.hives_in, season.hives_out,
+            season.hives_dead, *season.categorical, *EXTRA_COLUMNS]
+
+
 def load(season: Season, path=None) -> pd.DataFrame:
-    """Read the de-identified CSV. Row 2 of the survey export holds the question
-    text; it is detected and dropped if present."""
+    """Read the survey CSV and keep only the coded analysis columns.
+
+    Row 2 of a raw survey export holds the question text; it is detected and
+    dropped if present."""
     path = path or season.data_file
     df = pd.read_csv(path, encoding="utf-8-sig", low_memory=False)
     if len(df) and pd.to_numeric(df[season.hives_in].iloc[:1], errors="coerce").isna().all():
         df = df.iloc[1:].reset_index(drop=True)
+    df = df[[c for c in analysis_columns(season) if c in df.columns]]
     assert_no_pii(df)
     return df
+
+
+def parse_count(value) -> float:
+    """Free-typed colony counts: 'Nee'/'o' -> 0, '3!' -> 3, 'januari 1 volk' -> 1."""
+    if pd.isna(value):
+        return np.nan
+    text = str(value).strip().lower()
+    if text in {"nee", "no", "n", "o", "geen"}:
+        return 0.0
+    match = re.search(r"\d+(?:[,.]\d+)?", text)
+    return float(match.group(0).replace(",", ".")) if match else np.nan
 
 
 def to_numeric(df: pd.DataFrame, season: Season) -> tuple[pd.DataFrame, pd.DataFrame]:
@@ -49,7 +79,7 @@ def to_numeric(df: pd.DataFrame, season: Season) -> tuple[pd.DataFrame, pd.DataF
     cols = [season.apiary_id, season.beekeeper_id, season.hives_in, season.hives_out,
             *season.categorical]
     if season.hives_dead in df.columns:
-        cols.append(season.hives_dead)
+        df[season.hives_dead] = df[season.hives_dead].map(parse_count)
     problems = []
     for col in cols:
         if col not in df.columns:
@@ -140,7 +170,7 @@ def death_definition_check(df: pd.DataFrame, season: Season) -> pd.DataFrame:
     failure and not counted as 'dead'. Returns one row per mismatching apiary."""
     if season.hives_dead not in df.columns:
         return pd.DataFrame()
-    dood = pd.to_numeric(df[season.hives_dead], errors="coerce")
+    dood = df[season.hives_dead].map(parse_count)
     out = pd.DataFrame({
         season.apiary_id: df[season.apiary_id],
         "in": df[season.hives_in],

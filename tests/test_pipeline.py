@@ -68,3 +68,14 @@ def test_compare_cells_matches_coefficient(df):
     out = models.compare_cells(m4, S, [("h", {"winter_food": 3}, {"winter_food": 2})])
     term = "C(winter_food, Treatment(2))[T.3]"
     assert out.loc[0, "odds_ratio"] == pytest.approx(np.exp(m4.params[term]))
+
+
+def test_parse_count():
+    assert [cleaning.parse_count(v) for v in ["Nee", "o", "3!", "januari 1 volk", "2,0"]] == [0, 0, 3, 1, 2]
+
+
+def test_load_keeps_only_coded_columns(tmp_path):
+    raw = synthetic.make().assign(winter_food_origin="eigen honing", andere_ziektes="kalkbroed")
+    raw.to_csv(tmp_path / "s.csv", index=False)
+    cols = cleaning.load(S, tmp_path / "s.csv").columns
+    assert "winter_food_origin" not in cols and "andere_ziektes" not in cols
