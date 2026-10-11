@@ -1,0 +1,5 @@
+code,label,apiaries,hives_in,deaths,share_of_apiaries_pct,mortality_pct
+1,Controlled,86,749.0,102.0,10.4,13.62
+2,Natural,96,435.0,117.0,11.6,26.9
+3,Regulier,458,2621.0,601.0,55.4,22.93
+4,Unknown / mixed,187,1037.0,227.0,22.6,21.89

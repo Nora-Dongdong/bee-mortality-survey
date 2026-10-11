@@ -1,0 +1,51 @@
+model,term,label,odds_ratio,ci_low,ci_high,p_value
+Model 1,Intercept,Intercept,0.13840384737464495,0.0876825250136324,0.2184657087045087,2.0394098013488584e-17
+Model 1,"C(winter_food, Treatment(2))[T.1]",Winter feed: Sugar only,1.0558632227217515,0.5948874904232577,1.8740470476243465,0.8526838826422025
+Model 1,"C(winter_food, Treatment(2))[T.3]",Winter feed: Honey only,2.750064450369906,1.667182815765097,4.536307841991291,7.444312123973671e-05
+Model 1,"C(varroa_treatment, Treatment(2))[T.1]",Varroa treatment: Full 3-step (3 gangenmenu),1.592844884196982,0.9094735582168735,2.7896960853780923,0.10350348956240348
+Model 1,"C(varroa_treatment, Treatment(2))[T.3]",Varroa treatment: Winter only,2.8853531095177822,1.688560473120811,4.930390530353418,0.00010600672297326941
+Model 1,"C(varroa_treatment, Treatment(2))[T.4]",Varroa treatment: Summer only,2.607467581731667,1.4986166141788266,4.53677553381928,0.000694878540190123
+Model 1,"C(varroa_treatment, Treatment(2))[T.5]",Varroa treatment: No treatment,1.7452517839979753,0.9022214977192676,3.3760044481847062,0.09806523595811995
+Model 2,Intercept,Intercept,0.10249999999999995,0.05649301876044447,0.18597430674666482,6.674700231763045e-14
+Model 2,"C(winter_food, Treatment(2))[T.1]",Winter feed: Sugar only,1.9691206086372814,0.7552923699545977,5.133688788082341,0.16576947682166931
+Model 2,"C(winter_food, Treatment(2))[T.3]",Winter feed: Honey only,7.504690431519702,2.9432345165743294,19.135538862358615,2.438832532547088e-05
+Model 2,"C(varroa_treatment, Treatment(2))[T.1]",Varroa treatment: Full 3-step (3 gangenmenu),2.323958274385529,1.1254451436675172,4.798796362020187,0.022642890209344818
+Model 2,"C(varroa_treatment, Treatment(2))[T.3]",Varroa treatment: Winter only,4.329629095107521,2.152824332865846,8.707486168296535,3.941181402554629e-05
+Model 2,"C(varroa_treatment, Treatment(2))[T.4]",Varroa treatment: Summer only,3.7084581372129515,1.789436883972945,7.6854690314234535,0.0004233963426463271
+Model 2,"C(varroa_treatment, Treatment(2))[T.5]",Varroa treatment: No treatment,1.897018970189703,0.7735005325781014,4.652460886180757,0.16185562934705244
+Model 2,"C(winter_food, Treatment(2))[T.1]:C(varroa_treatment, Treatment(2))[T.1]",Winter feed: Sugar only x Varroa treatment: Full 3-step (3 gangenmenu),0.5122688735132511,0.1366864031463284,1.9198646882938648,0.32103512565669357
+Model 2,"C(winter_food, Treatment(2))[T.3]:C(varroa_treatment, Treatment(2))[T.1]",Winter feed: Honey only x Varroa treatment: Full 3-step (3 gangenmenu),0.10930617442901919,0.026591019733709795,0.4493186003378701,0.0021462101265214213
+Model 2,"C(winter_food, Treatment(2))[T.1]:C(varroa_treatment, Treatment(2))[T.3]",Winter feed: Sugar only x Varroa treatment: Winter only,0.32219136510738405,0.10293188214328589,1.0085045914661812,0.05172470121401293
+Model 2,"C(winter_food, Treatment(2))[T.3]:C(varroa_treatment, Treatment(2))[T.3]",Winter feed: Honey only x Varroa treatment: Winter only,0.48041066666666643,0.09103556996955892,2.535211332496578,0.3876845968633619
+Model 2,"C(winter_food, Treatment(2))[T.1]:C(varroa_treatment, Treatment(2))[T.4]",Winter feed: Sugar only x Varroa treatment: Summer only,0.4058771355227046,0.10641610682331544,1.548038676265713,0.18677680760335702
+Model 2,"C(winter_food, Treatment(2))[T.3]:C(varroa_treatment, Treatment(2))[T.4]",Winter feed: Honey only x Varroa treatment: Summer only,0.3353086956521738,0.08741191133363181,1.2862311287398178,0.11116039518430794
+Model 2,"C(winter_food, Treatment(2))[T.1]:C(varroa_treatment, Treatment(2))[T.5]",Winter feed: Sugar only x Varroa treatment: No treatment,1.1684159261790823,0.2917627310887163,4.679130098126916,0.8259697475418138
+Model 2,"C(winter_food, Treatment(2))[T.3]:C(varroa_treatment, Treatment(2))[T.5]",Winter feed: Honey only x Varroa treatment: No treatment,0.5689164420485169,0.14583623553578928,2.219379270481194,0.4167377471595526
+Model 3,Intercept,Intercept,0.08775960604443124,0.04278492106641807,0.18001081364899105,3.178136774840519e-11
+Model 3,"C(imker_methode, Treatment(1))[T.2]",Beekeeping method: Natural,1.5792839030189154,0.651958940386296,3.8256054052373965,0.3113837544621516
+Model 3,"C(imker_methode, Treatment(1))[T.3]",Beekeeping method: Regulier,1.7604066987156883,0.9572882156538363,3.2373027205462903,0.06883115109526096
+Model 3,"C(imker_methode, Treatment(1))[T.4]",Beekeeping method: Unknown / mixed,1.5361126931779014,0.8552650268670455,2.758960242751843,0.15080596275546515
+Model 3,"C(winter_food, Treatment(2))[T.1]",Winter feed: Sugar only,1.0884908885078999,0.6190521673752348,1.9139136841864088,0.7683944124904837
+Model 3,"C(winter_food, Treatment(2))[T.3]",Winter feed: Honey only,2.7135913155765836,1.6058757651464661,4.585396945261858,0.0001917592300653031
+Model 3,"C(varroa_treatment, Treatment(2))[T.1]",Varroa treatment: Full 3-step (3 gangenmenu),1.6031356583252228,0.902106066066159,2.848937653419307,0.10766305018963113
+Model 3,"C(varroa_treatment, Treatment(2))[T.3]",Varroa treatment: Winter only,2.76893902547754,1.5749365247998899,4.868147513301639,0.00040360504222843437
+Model 3,"C(varroa_treatment, Treatment(2))[T.4]",Varroa treatment: Summer only,2.6171584441313476,1.4803833421892603,4.626854495375924,0.0009349417235011052
+Model 3,"C(varroa_treatment, Treatment(2))[T.5]",Varroa treatment: No treatment,1.740736372588392,0.8657358588285651,3.5001012005582557,0.11984992050751618
+Model 4,Intercept,Intercept,0.06059778815634469,0.02698045491271181,0.13610192790749154,1.1150728404303606e-11
+Model 4,"C(imker_methode, Treatment(1))[T.2]",Beekeeping method: Natural,1.445641942757355,0.6047526204352082,3.455761175793309,0.4071778274204052
+Model 4,"C(imker_methode, Treatment(1))[T.3]",Beekeeping method: Regulier,1.8361443263183392,1.0096132493754086,3.3393242304979074,0.046446161913421415
+Model 4,"C(imker_methode, Treatment(1))[T.4]",Beekeeping method: Unknown / mixed,1.6541809202867241,0.9352511775351956,2.925753618671771,0.0836503938974931
+Model 4,"C(winter_food, Treatment(2))[T.1]",Winter feed: Sugar only,2.2704141283832704,0.8132109105336355,6.338798763754607,0.11752156382928004
+Model 4,"C(winter_food, Treatment(2))[T.3]",Winter feed: Honey only,8.26951010365913,2.840538508396126,24.074589079636535,0.00010669943735536319
+Model 4,"C(varroa_treatment, Treatment(2))[T.1]",Varroa treatment: Full 3-step (3 gangenmenu),2.4375788830183542,1.1626835001739981,5.110411225451988,0.018322220603964757
+Model 4,"C(varroa_treatment, Treatment(2))[T.3]",Varroa treatment: Winter only,4.309695805970933,2.0962722534894236,8.860241273091468,7.102280937220742e-05
+Model 4,"C(varroa_treatment, Treatment(2))[T.4]",Varroa treatment: Summer only,3.791682116725115,1.8087171453519106,7.948646537264861,0.0004168737532776922
+Model 4,"C(varroa_treatment, Treatment(2))[T.5]",Varroa treatment: No treatment,1.9960238871095406,0.7950513531331432,5.011137132477381,0.14112102970770674
+Model 4,"C(winter_food, Treatment(2))[T.1]:C(varroa_treatment, Treatment(2))[T.1]",Winter feed: Sugar only x Varroa treatment: Full 3-step (3 gangenmenu),0.4449095934355637,0.11725699818688375,1.6881256504239974,0.23390634791139464
+Model 4,"C(winter_food, Treatment(2))[T.3]:C(varroa_treatment, Treatment(2))[T.1]",Winter feed: Honey only x Varroa treatment: Full 3-step (3 gangenmenu),0.09557766533242305,0.02133729861403971,0.42812777173141664,0.0021490934975797217
+Model 4,"C(winter_food, Treatment(2))[T.1]:C(varroa_treatment, Treatment(2))[T.3]",Winter feed: Sugar only x Varroa treatment: Winter only,0.27798979435562793,0.08357111632535269,0.9247013700885633,0.03683162748695578
+Model 4,"C(winter_food, Treatment(2))[T.3]:C(varroa_treatment, Treatment(2))[T.3]",Winter feed: Honey only x Varroa treatment: Winter only,0.42523438050421447,0.07137996663105388,2.5332636998478977,0.34766373397576567
+Model 4,"C(winter_food, Treatment(2))[T.1]:C(varroa_treatment, Treatment(2))[T.4]",Winter feed: Sugar only x Varroa treatment: Summer only,0.3973879166697564,0.10458299487484408,1.5099697279095028,0.17544023714939438
+Model 4,"C(winter_food, Treatment(2))[T.3]:C(varroa_treatment, Treatment(2))[T.4]",Winter feed: Honey only x Varroa treatment: Summer only,0.2825522314552739,0.0665396363452736,1.199822660377757,0.08670336564795934
+Model 4,"C(winter_food, Treatment(2))[T.1]:C(varroa_treatment, Treatment(2))[T.5]",Winter feed: Sugar only x Varroa treatment: No treatment,1.0513932825748906,0.25592233065474346,4.319387963588455,0.9445788674768376
+Model 4,"C(winter_food, Treatment(2))[T.3]:C(varroa_treatment, Treatment(2))[T.5]",Winter feed: Honey only x Varroa treatment: No treatment,0.5491051277947328,0.13351102371869053,2.258363638988859,0.4060501138116245

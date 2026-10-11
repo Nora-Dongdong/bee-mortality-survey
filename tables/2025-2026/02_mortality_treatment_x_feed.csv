@@ -1,0 +1,16 @@
+varroa_treatment,winter_food,apiaries,hives_in,deaths,mortality_pct,small_sample,varroa_treatment_label,winter_food_label
+1,1,104,702.0,136.0,19.37,False,Full 3-step (3 gangenmenu),Sugar only
+1,2,277,1601.0,308.0,19.24,False,Full 3-step (3 gangenmenu),Honey + sugar
+1,3,21,104.0,17.0,16.35,False,Full 3-step (3 gangenmenu),Honey only
+2,1,14,131.0,22.0,16.79,True,Alternative full treatment,Sugar only
+2,2,55,441.0,41.0,9.3,False,Alternative full treatment,Honey + sugar
+2,3,10,46.0,20.0,43.48,True,Alternative full treatment,Honey only
+3,1,26,132.0,29.0,21.97,False,Winter only,Sugar only
+3,2,54,244.0,75.0,30.74,False,Winter only,Honey + sugar
+3,3,8,52.0,32.0,61.54,True,Winter only,Honey only
+4,1,20,103.0,24.0,23.3,False,Summer only,Sugar only
+4,2,87,472.0,130.0,27.54,False,Summer only,Honey + sugar
+4,3,9,45.0,22.0,48.89,True,Summer only,Honey only
+5,1,14,55.0,17.0,30.91,True,No treatment,Sugar only
+5,2,65,516.0,84.0,16.28,False,No treatment,Honey + sugar
+5,3,62,195.0,88.0,45.13,False,No treatment,Honey only

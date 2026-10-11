@@ -1,0 +1,4 @@
+group_a,group_b,p_value,significant_bonferroni
+Sugar only,Honey + sugar,0.5824796041577897,False
+Sugar only,Honey only,4.1263817597280475e-16,True
+Honey + sugar,Honey only,2.5148012674609923e-23,True

@@ -3,9 +3,18 @@
 `raw/` holds the original survey exports. They contain names, e-mail addresses
 and coordinates, are ignored by git, and must never be committed.
 
-`processed/<season>_survey_deidentified.csv` is the only file the analysis reads
-(path set in `src/beesurvey/config.py`). `cleaning.load()` refuses a file that
-has a column that looks like personal data or free text.
+## How to run
+
+```
+python scripts/01_cleaning.py      # survey CSV -> data/processed/2025-2026_survey_clean.csv
+python scripts/02_descriptive.py   # tables/2025-2026/02_*, figures/2025-2026/02_*
+python scripts/03_models.py        # tables/2025-2026/03_*, figures/2025-2026/03_*
+```
+
+Step 1 reads the survey file set in `src/beesurvey/config.py` (or `--data path`),
+keeps only coded answer columns (open-text answers and stray columns are dropped)
+and refuses anything that looks like personal data. Its output in `processed/`
+is git-ignored until we decide to publish a de-identified dataset.
 
 ## Columns the analysis expects (2025-2026)
 
@@ -24,9 +33,6 @@ has a column that looks like personal data or free text.
 
 Open-text answers are coded into the numeric columns before de-identification;
 the coding rules are in the 2026 key-conclusions report appendix.
-
-Landscape indices (crop diversity, toxicity) are a separate table without
-coordinates: `id_location, radius_m, crop_diversity_index, toxicity_index`.
 
 Death count: `deaths = 2025_winter_in - 2026_winter_uit` everywhere. The run
 writes `tables/<season>/01_death_definition_mismatches.csv` listing apiaries

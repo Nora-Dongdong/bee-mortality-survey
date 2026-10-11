@@ -72,13 +72,18 @@ class Season:
         return REPO_DIR / "figures" / self.name
 
     @property
+    def clean_file(self) -> Path:
+        """Output of scripts/01_cleaning.py, input of the other two scripts."""
+        return REPO_DIR / "data" / "processed" / f"{self.name}_survey_clean.csv"
+
+    @property
     def tables_dir(self) -> Path:
         return REPO_DIR / "tables" / self.name
 
 
 SEASON_2025_2026 = Season(
     name="2025-2026",
-    data_file=REPO_DIR / "data" / "processed" / "2025-2026_survey_deidentified.csv",
+    data_file=REPO_DIR / "data" / "raw" / "2026_surveydata_cleaned_exclude_gps.csv",
     hives_in="2025_winter_in",
     hives_out="2026_winter_uit",
     hives_dead="2025_winter_dood",
