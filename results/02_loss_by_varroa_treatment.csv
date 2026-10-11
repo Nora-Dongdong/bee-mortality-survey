@@ -1,0 +1,6 @@
+varroa_treatment,answer,apiaries,hives_in,deaths,share_of_apiaries_pct,loss_pct
+1,Full 3-step,402,2407.0,461.0,48.6,19.15
+2,Alternative full,79,618.0,83.0,9.5,13.43
+3,Winter only,88,428.0,136.0,10.6,31.78
+4,Summer only,117,623.0,177.0,14.1,28.41
+5,No treatment,142,767.0,190.0,17.1,24.77

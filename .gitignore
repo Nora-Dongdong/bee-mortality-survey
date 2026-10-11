@@ -222,3 +222,8 @@ Data/
 Outputs/
 *.pkl
 Trial_*.py
+
+# Raw survey exports contain personal data and never go in the repo
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*.csv

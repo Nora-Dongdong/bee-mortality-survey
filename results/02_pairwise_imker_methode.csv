@@ -1,0 +1,7 @@
+group_a,group_b,p_value,significant_bonferroni
+Controlled,Natural,2.2001102257108542e-08,True
+Controlled,Regulier,4.240534054816136e-08,True
+Controlled,Unknown / mixed,1.1437733992026515e-05,True
+Natural,Regulier,0.08081680234876923,False
+Natural,Unknown / mixed,0.045119459080848856,False
+Regulier,Unknown / mixed,0.526291154496649,False

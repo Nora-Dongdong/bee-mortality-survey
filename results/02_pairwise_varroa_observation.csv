@@ -1,0 +1,11 @@
+group_a,group_b,p_value,significant_bonferroni
+Not seen,A few,0.000391175765513517,True
+Not seen,Moderate,3.6865516123867965e-06,True
+Not seen,Many,0.00809364847965006,False
+Not seen,Don't know,0.2519801224219848,False
+A few,Moderate,0.10722959574490959,False
+A few,Many,0.7719078817877828,False
+A few,Don't know,0.08462062888296973,False
+Moderate,Many,0.16524648415877952,False
+Moderate,Don't know,0.007535003126793638,False
+Many,Don't know,0.2343389832332057,False
