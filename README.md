@@ -9,16 +9,16 @@ losses, used to find which beekeeping practices go together with higher losses.
 bee-mortality-survey/
 ├── data/
 │   ├── raw/          survey export (not in the repo: contains personal data)
-│   ├── processed/    cleaned data written by notebook 01 (not in the repo)
+│   ├── processed/    cleaned data written by notebook 01
 │   └── README.md     columns and answer codes
-├── notebooks/        run in order; each one runs on its own
+├── notebooks/        
 │   ├── 01_data_cleaning.ipynb       raw survey -> data/processed/
 │   ├── 02_descriptive_stats.ipynb   loss rates per answer, chi-square tests, heatmap
 │   └── 03_regression_models.ipynb   GEE Models 1-4, weighting check, predicted loss
 ├── results/          tables (CSV) written by the notebooks, prefixed by notebook number
 ├── plots/            charts (PNG) written by the notebooks, prefixed by notebook number
 ├── outputs/          reports and presentations
-├── archive/          the July 2026 notebooks, kept for reference
+├── archive/          original notebooks (july 2026), kept for reference
 └── requirements.txt
 ```
 
@@ -30,14 +30,15 @@ bee-mortality-survey/
 
 ## Method in short
 
+- Main question: Which beekeeping methods and environmental factors contribute to hive mortality?
 - Winter loss = (colonies in autumn 2025 - colonies in spring 2026) / colonies in autumn 2025.
   Group rates are hive-weighted: total deaths / total colonies.
 - Exclusion rules are in notebook 01 and each one prints how many apiaries it removes.
-- Regression: binomial GEE, one row per colony, clustered by beekeeper, robust standard errors.
+- Regression: binomial GEE, one row per colony, clustered by beekeeper.
   Reference groups: controlled method, honey + sugar feed, alternative full varroa treatment.
   Notebook 03 also refits the models with every apiary weighted equally, as in the July 2026 report.
 
 ## Data
 
 Raw data is not open access. Names, contact details, addresses, coordinates and open-text answers
-are removed in notebook 01 before anything is saved.
+are removed in the dataset.
