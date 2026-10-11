@@ -1,7 +1,9 @@
 # bee-mortality-survey
 
-Data analysis for Stichting Bee Foundation: a survey of Dutch beekeepers on winter colony
-losses, used to find which beekeeping practices go together with higher losses.
+This project is my research work for Stichting Bee Foundation, where I used causal inference to analyze the cause of higher hive mortality. 
+The study lasts 2 years: beekeeping year 2024-2025 and 2025-2026.
+Key features I look at include several beekeeping practices (winter food, varroa treatment, and beekeeping method), mites existance, and surrounding environment (biodiversity and toxicity).
+
 
 ## Structure
 
@@ -40,5 +42,6 @@ bee-mortality-survey/
 
 ## Data
 
+Data source: self-report survey from Dutch beekeepers
 Raw data is not open access. Names, contact details, addresses, coordinates and open-text answers
 are removed in the dataset.
