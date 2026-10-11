@@ -1,0 +1,11 @@
+group_a,group_b,p_value,significant_bonferroni
+Full 3-step,Alternative full,0.001173504158513699,True
+Full 3-step,Winter only,5.2977271578516434e-09,True
+Full 3-step,Summer only,5.831272905834974e-07,True
+Full 3-step,No treatment,0.0009494795863964095,True
+Alternative full,Winter only,1.3130933365172437e-12,True
+Alternative full,Summer only,1.4171415926133975e-10,True
+Alternative full,No treatment,1.9276125361493274e-07,True
+Winter only,Summer only,0.2698767587932238,False
+Winter only,No treatment,0.011131039202106148,False
+Summer only,No treatment,0.14171036889512753,False
