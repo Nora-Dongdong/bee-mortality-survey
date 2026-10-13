@@ -3,6 +3,7 @@
 This project is my research work for Stichting Bee Foundation, where I used causal inference to analyze the cause of higher hive mortality. 
 The study lasts 2 years: beekeeping year 2024-2025 and 2025-2026.
 Key features I look at include several beekeeping practices (winter food, varroa treatment, and beekeeping method), mites existance, and surrounding environment (biodiversity and toxicity).
+Go to folder reports to view the final results.
 
 
 ## Structure
