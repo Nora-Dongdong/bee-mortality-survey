@@ -22,7 +22,7 @@ bee-mortality-survey/
 ├── analysis_results/ tables (CSV, HTML) written by the notebooks, prefixed by notebook number
 ├── plots/            charts (PNG) written by the notebooks, prefixed by notebook number
 ├── reports/
-│   ├── 2024-2025/    reports for beekeeping year 2024-2025
+│   ├── 2024-2025/    reports and presentation for beekeeping year 2024-2025
 │   └── 2025-2026/    reports and presentation for beekeeping year 2025-2026
 ├── archive/          original notebooks (july 2026), kept for reference
 └── requirements.txt
